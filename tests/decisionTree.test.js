@@ -25,7 +25,7 @@ const tree = {
         {
           key: 'C',
           label: 'Charisma',
-          leadsTo: 'Bard'
+          leadsTo: 'bard'
         }
       ],
       children: [
@@ -64,8 +64,8 @@ const tree = {
             {
               key: 'swords',
               label: 'Swords',
-              leadsTo: state => {
-                if (state.responses.attribute === 'D') {
+              leadsTo: dt => {
+                if (dt.state.attribute === 'D') {
                   return 'thief'
                 } else {
                   return 'fighter'
@@ -107,22 +107,24 @@ const tree = {
 }
 
 test('DecisionTree stores a response and traverses a static lead', () => {
-  const { name, children } = tree.children[0]
   const decisionTree = new DecisionTree(tree)
-  const q = decisionTree.next()
-  expect(q.name).toBe(name)
-  decisionTree.set(name, children[1].key)
-  expect(decisionTree.state.responses[name]).toBe(children[1].key)
+  expect(decisionTree.currentNode.key).toBe(tree.key)
   decisionTree.next()
-  expect(decisionTree.path).toEqual(['state', 'attribute', 'bard'])
+  expect(decisionTree.currentNode.key).toBe(tree.children[0].key)
+  expect(decisionTree.path).toEqual(['start', 'attribute'])
+  const bard = tree.children[0].options[3].key
+  decisionTree.set(tree.children[0].key, bard)
+  expect(decisionTree.state[tree.children[0].key]).toBe(bard)
+  decisionTree.next()
+  expect(decisionTree.path).toEqual(['start', 'attribute', 'bard'])
 })
 
-test('DecisionTree stores responses and traverses a functional lead', () => {
+test('DecisionTree stores state and traverses a functional lead', () => {
   const decisionTree = new DecisionTree(tree)
   decisionTree.next()
   decisionTree.set('attribute', 'S')
   decisionTree.next()
-  decisionTree.set('proficiency', 'S')
+  decisionTree.set('proficiency', 'swords')
   decisionTree.next()
   const fighterPath = ['start', 'attribute', 'proficiency', 'fighter']
   expect(decisionTree.path).toEqual(fighterPath)

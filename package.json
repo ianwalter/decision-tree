@@ -2,9 +2,14 @@
   "name": "@ianwalter/decision-tree",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/decision-tree.js",
+  "umd:main": "dist/decision-tree.umd.js",
+  "module": "dist/decision-tree.m.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "microbundle build index.js --no-compress",
+    "watch": "microbundle watch index.js --no-compress",
+    "test": "npm run build && jest",
+    "lint": "eslint --ext js index.js tests"
   },
   "repository": {
     "type": "git",
@@ -18,8 +23,30 @@
   },
   "homepage": "https://github.com/ianwalter/decision-tree#readme",
   "devDependencies": {
+    "eslint": "^5.7.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-jest": "^22.0.0",
+    "eslint-plugin-node": "^8.0.0",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
     "jest": "^23.6.0",
     "microbundle": "^0.7.0",
     "np": "^3.0.4"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "jest/globals": true
+    },
+    "extends": [
+      "standard"
+    ],
+    "plugins": [
+      "jest"
+    ]
+  },
+  "dependencies": {
+    "@ianwalter/base-error": "^3.0.0"
   }
 }
