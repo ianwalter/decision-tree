@@ -1,7 +1,7 @@
 {
   "name": "@ianwalter/decision-tree",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.0.0",
+  "description": "A utility for traversing decision trees by selecting options",
   "main": "dist/decision-tree.js",
   "umd:main": "dist/decision-tree.umd.js",
   "module": "dist/decision-tree.m.js",
@@ -11,13 +11,23 @@
     "test": "npm run build && jest",
     "lint": "eslint --ext js index.js tests"
   },
+  "files": [
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ianwalter/decision-tree.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "decision",
+    "tree",
+    "traverse",
+    "traversal",
+    "quiz",
+    "survey"
+  ],
+  "author": "Ian Walter <public@iankwalter.com> (https://iankwalter.com)",
+  "license": "Apache 2.0 with Commons Clause",
   "bugs": {
     "url": "https://github.com/ianwalter/decision-tree/issues"
   },

@@ -12,10 +12,15 @@ export default class {
 
   set (key, value) {
     this.state[key] = value
+    return this
+  }
+
+  current () {
+    return this.path[this.path.length - 1]
   }
 
   next () {
-    const currentNode = this.path[this.path.length - 1]
+    const currentNode = this.current()
     const selectedOptionKey = this.state[currentNode.key]
     const selectedOption = currentNode.options
       ? currentNode.options.find(o => o.key === selectedOptionKey)

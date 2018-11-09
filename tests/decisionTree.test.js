@@ -48,12 +48,17 @@ const tree = {
             {
               key: 'mage',
               title: 'Mage',
-              description: ''
+              description: `
+                You are a powerful mage, hurling fireballs at your foes!
+              `
             },
             {
               key: 'cleric',
               title: 'Cleric',
-              description: ''
+              description: `
+                You are a knowledgeable cleric, saving your friends by casting
+                spells to heal them.
+              `
             }
           ]
         },
@@ -82,24 +87,34 @@ const tree = {
             {
               key: 'fighter',
               title: 'Fighter',
-              description: ''
+              description: `
+                You are a strong fighter, using your sword to cut down those who
+                stand in your way!
+              `
             },
             {
               key: 'thief',
               title: 'Thief',
-              description: ''
+              description: `
+                You are a dexterous thief, piercing enemies before they even
+                know what hit them.
+              `
             },
             {
               key: 'ranger',
               title: 'Ranger',
-              description: ''
+              description: `
+                You are a skilled ranger, felling combatants with your arrows.
+              `
             }
           ]
         },
         {
           key: 'bard',
           title: 'Bard',
-          description: ''
+          description: `
+            You are a talented bard, inspiring your party with heroic ballads.
+          `
         }
       ]
     }
@@ -120,15 +135,12 @@ test('DecisionTree stores a response and traverses a static lead', () => {
 test('DecisionTree stores state and traverses a functional lead', () => {
   const decisionTree = new DecisionTree(tree)
   decisionTree.next()
-  decisionTree.set('attribute', 'S')
-  decisionTree.next()
-  decisionTree.set('proficiency', 'swords')
-  decisionTree.next()
+  decisionTree.set('attribute', 'S').next()
+  decisionTree.set('proficiency', 'swords').next()
   const fighterPath = ['start', 'attribute', 'proficiency', 'fighter']
   expect(decisionTree.pathKeys()).toEqual(fighterPath)
   decisionTree.prev()
-  decisionTree.set('attribute', 'D')
-  decisionTree.next()
+  decisionTree.set('attribute', 'D').next()
   const thiefPath = ['start', 'attribute', 'proficiency', 'thief']
   expect(decisionTree.pathKeys()).toEqual(thiefPath)
 })
