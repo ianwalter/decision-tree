@@ -108,15 +108,13 @@ const tree = {
 
 test('DecisionTree stores a response and traverses a static lead', () => {
   const decisionTree = new DecisionTree(tree)
-  expect(decisionTree.currentNode.key).toBe(tree.key)
   decisionTree.next()
-  expect(decisionTree.currentNode.key).toBe(tree.children[0].key)
-  expect(decisionTree.path).toEqual(['start', 'attribute'])
+  expect(decisionTree.pathKeys()).toEqual(['start', 'attribute'])
   const bard = tree.children[0].options[3].key
   decisionTree.set(tree.children[0].key, bard)
   expect(decisionTree.state[tree.children[0].key]).toBe(bard)
   decisionTree.next()
-  expect(decisionTree.path).toEqual(['start', 'attribute', 'bard'])
+  expect(decisionTree.pathKeys()).toEqual(['start', 'attribute', 'bard'])
 })
 
 test('DecisionTree stores state and traverses a functional lead', () => {
@@ -127,10 +125,10 @@ test('DecisionTree stores state and traverses a functional lead', () => {
   decisionTree.set('proficiency', 'swords')
   decisionTree.next()
   const fighterPath = ['start', 'attribute', 'proficiency', 'fighter']
-  expect(decisionTree.path).toEqual(fighterPath)
+  expect(decisionTree.pathKeys()).toEqual(fighterPath)
   decisionTree.prev()
   decisionTree.set('attribute', 'D')
   decisionTree.next()
   const thiefPath = ['start', 'attribute', 'proficiency', 'thief']
-  expect(decisionTree.path).toEqual(thiefPath)
+  expect(decisionTree.pathKeys()).toEqual(thiefPath)
 })

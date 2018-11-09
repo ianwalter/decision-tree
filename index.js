@@ -2,8 +2,7 @@ const BaseError = require('@ianwalter/base-error')
 
 export default class {
   constructor (tree = {}) {
-    this.currentNode = tree
-    this.path = tree.key ? [tree.key] : []
+    this.path = [tree]
     this.state = {}
 
     this.noChildren = `No children found to move to`
@@ -15,42 +14,37 @@ export default class {
     this.state[key] = value
   }
 
-  moveTo (node) {
-    if (node.key !== this.currentNode.key) {
-      this.parentNode = this.currentNode
-      this.path.push(node.key)
-    } else {
-      this.path.pop()
-    }
-    this.currentNode = node
-    return node
-  }
-
   next () {
-    const selectedOptionKey = this.state[this.currentNode.key]
-    const selectedOption = this.currentNode.options
-      ? this.currentNode.options.find(o => o.key === selectedOptionKey)
+    const currentNode = this.path[this.path.length - 1]
+    const selectedOptionKey = this.state[currentNode.key]
+    const selectedOption = currentNode.options
+      ? currentNode.options.find(o => o.key === selectedOptionKey)
       : null
-    if (this.currentNode.children.length < 1) {
-      throw new BaseError(this.noChildren, this.currentNode)
-    } else if (this.currentNode.children.length === 1) {
-      return this.moveTo(this.currentNode.children[0])
+    if (currentNode.children.length < 1) {
+      throw new BaseError(this.noChildren, currentNode)
+    } else if (currentNode.children.length === 1) {
+      return this.path.push(currentNode.children[0]) && currentNode.children[0]
     } else if (selectedOption && selectedOption.leadsTo) {
       const key = typeof selectedOption.leadsTo === 'function'
         ? selectedOption.leadsTo(this)
         : selectedOption.leadsTo
-      const node = this.currentNode.children.find(node => node.key === key)
+      const node = currentNode.children.find(node => node.key === key)
       if (node) {
-        return this.moveTo(node)
+        return this.path.push(node) && node
       }
     }
-    throw new BaseError(this.noLead, selectedOption, this.currentNode.children)
+    throw new BaseError(this.noLead, selectedOption, currentNode.children)
   }
 
   prev () {
-    if (this.parentNode) {
-      return this.moveTo(this.parentNode)
+    const parentNode = this.path[this.path.length - 2]
+    if (parentNode) {
+      return this.path.pop()
     }
     throw new BaseError(this.noParent)
+  }
+
+  pathKeys () {
+    return this.path.map(({ key }) => key)
   }
 }
