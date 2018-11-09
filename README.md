@@ -149,6 +149,6 @@ Apache 2.0 with Commons Clause - See [LICENSE](https://github.com/ianwalter/deci
 
 &nbsp;
 
-ISC &copy; [Ian Walter](https://iankwalter.com)
+Created by [Ian Walter](https://iankwalter.com)
 
 
