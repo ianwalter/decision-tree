@@ -1,6 +1,6 @@
 {
   "name": "@ianwalter/decision-tree",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A utility for traversing decision trees by selecting options",
   "main": "dist/decision-tree.js",
   "umd:main": "dist/decision-tree.umd.js",
