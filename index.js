@@ -1,9 +1,9 @@
 import BaseError from '@ianwalter/base-error'
 
 export default class {
-  constructor (tree = {}) {
-    this.path = [tree]
-    this.state = {}
+  constructor (tree = {}, path = [tree], state = {}) {
+    this.path = path
+    this.state = state
 
     this.noChildren = `No children found to move to`
     this.noLead = `Can't determine which child to move to`
@@ -11,7 +11,11 @@ export default class {
   }
 
   set (key, value) {
-    this.state[key] = value
+    if (typeof key === 'object' && value === undefined) {
+      this.state = key
+    } else {
+      this.state[key] = value
+    }
     return this
   }
 
@@ -38,7 +42,7 @@ export default class {
         return this.path.push(node) && node
       }
     }
-    throw new BaseError(this.noLead, selectedOption, currentNode.children)
+    throw new BaseError(this.noLead, selectedOptionKey, selectedOption)
   }
 
   prev () {

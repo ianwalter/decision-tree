@@ -6,8 +6,8 @@
   "umd:main": "dist/decision-tree.umd.js",
   "module": "dist/decision-tree.m.js",
   "scripts": {
-    "build": "microbundle build index.js --external none",
-    "watch": "microbundle watch index.js --external none",
+    "build": "microbundle build index.js --no-compress --external none",
+    "watch": "microbundle watch index.js --no-compress --external none",
     "test": "npm run build && jest",
     "lint": "eslint --ext js index.js tests"
   },
