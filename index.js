@@ -1,4 +1,4 @@
-const BaseError = require('@ianwalter/base-error')
+import BaseError from '@ianwalter/base-error'
 
 export default class {
   constructor (tree = {}) {
