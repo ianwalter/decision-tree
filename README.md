@@ -1,6 +1,8 @@
 # decision-tree
 > A utility for traversing decision trees by selecting options
 
+[![npm page][npmImage]][npmUrl]
+
 ## About
 
 Create your own Buzzfeed quizzes!
@@ -145,10 +147,14 @@ decisionTree.current() /* => {
 
 ## License
 
-Apache 2.0 with Commons Clause - See [LICENSE](https://github.com/ianwalter/decision-tree/blob/master/LICENSE)
+Apache 2.0 with Commons Clause - See [LICENSE][licenseUrl]
 
 &nbsp;
 
 Created by [Ian Walter](https://iankwalter.com)
+
+[npmImage]: https://img.shields.io/npm/v/@ianwalter/decision-tree.svg
+[npmUrl]: https://www.npmjs.com/package/@ianwalter/decision-tree
+[licenseUrl]: https://github.com/ianwalter/decision-tree/blob/master/LICENSE
 
 
