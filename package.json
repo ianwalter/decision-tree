@@ -3,13 +3,12 @@
   "version": "1.1.0",
   "description": "A utility for traversing decision trees by selecting options",
   "main": "dist/decision-tree.js",
-  "umd:main": "dist/decision-tree.umd.js",
+  "iife": "dist/decision-tree.iife.js",
   "module": "dist/decision-tree.m.js",
   "scripts": {
-    "build": "microbundle build index.js --no-compress --external none",
-    "watch": "microbundle watch index.js --no-compress --external none",
-    "test": "npm run build && jest",
-    "lint": "eslint --ext js index.js tests"
+    "lint": "eslint index.js test.js",
+    "pretest": "dist --babel",
+    "test": "ava"
   },
   "files": [
     "dist"
@@ -27,36 +26,33 @@
     "survey"
   ],
   "author": "Ian Walter <public@iankwalter.com> (https://iankwalter.com)",
-  "license": "Apache 2.0 with Commons Clause",
+  "license": "SEE LICENSE IN LICENSE",
   "bugs": {
     "url": "https://github.com/ianwalter/decision-tree/issues"
   },
   "homepage": "https://github.com/ianwalter/decision-tree#readme",
   "dependencies": {
-    "@ianwalter/base-error": "^3.0.0"
+    "@babel/runtime": "^7.2.0",
+    "@ianwalter/base-error": "^4.0.0"
   },
   "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.2.0",
+    "@babel/preset-env": "^7.2.3",
+    "@ianwalter/dist": "^1.3.1",
+    "ava": "^1.0.1",
     "eslint": "^5.7.0",
     "eslint-config-standard": "^12.0.0",
     "eslint-plugin-import": "^2.12.0",
-    "eslint-plugin-jest": "^22.0.0",
     "eslint-plugin-node": "^8.0.0",
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-standard": "^4.0.0",
-    "jest": "^23.6.0",
-    "microbundle": "^0.9.0",
     "np": "^3.0.4"
   },
   "eslintConfig": {
     "root": true,
-    "env": {
-      "jest/globals": true
-    },
     "extends": [
+      "eslint:recommended",
       "standard"
-    ],
-    "plugins": [
-      "jest"
     ]
   }
 }

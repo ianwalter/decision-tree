@@ -1,4 +1,5 @@
-const DecisionTree = require('../')
+import test from 'ava'
+import DecisionTree from '.'
 
 const proficiency = {
   key: 'proficiency',
@@ -119,33 +120,33 @@ const attribute = {
 const tree = { key: 'start', children: [attribute] }
 const fighterPath = ['start', 'attribute', 'proficiency', 'fighter']
 
-test('DecisionTree stores a response and traverses a static lead', () => {
+test('DecisionTree stores a response and traverses a static lead', t => {
   const decisionTree = new DecisionTree(tree)
   decisionTree.next()
-  expect(decisionTree.pathKeys()).toEqual(['start', 'attribute'])
+  t.deepEqual(decisionTree.pathKeys(), ['start', 'attribute'])
   const bard = tree.children[0].options[3].key
   decisionTree.set(tree.children[0].key, bard)
-  expect(decisionTree.state[tree.children[0].key]).toBe(bard)
+  t.is(decisionTree.state[tree.children[0].key], bard)
   decisionTree.next()
-  expect(decisionTree.pathKeys()).toEqual(['start', 'attribute', 'bard'])
+  t.deepEqual(decisionTree.pathKeys(), ['start', 'attribute', 'bard'])
 })
 
-test('DecisionTree stores state and traverses a functional lead', () => {
+test('DecisionTree stores state and traverses a functional lead', t => {
   const decisionTree = new DecisionTree(tree)
   decisionTree.next()
   decisionTree.set('attribute', 'S').next()
   decisionTree.set('proficiency', 'swords').next()
-  expect(decisionTree.pathKeys()).toEqual(fighterPath)
+  t.deepEqual(decisionTree.pathKeys(), fighterPath)
   decisionTree.prev()
   decisionTree.set('attribute', 'D').next()
   const thiefPath = ['start', 'attribute', 'proficiency', 'thief']
-  expect(decisionTree.pathKeys()).toEqual(thiefPath)
+  t.deepEqual(decisionTree.pathKeys(), thiefPath)
 })
 
-test('DecisionTree can be instantiated with path and state', () => {
+test('DecisionTree can be instantiated with path and state', t => {
   const path = [tree, attribute, proficiency]
   const state = { attribute: 'S', proficiency: 'swords' }
   const decisionTree = new DecisionTree(tree, path, state)
   decisionTree.next()
-  expect(decisionTree.pathKeys()).toEqual(fighterPath)
+  t.deepEqual(decisionTree.pathKeys(), fighterPath)
 })
