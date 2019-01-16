@@ -1,5 +1,13 @@
 import BaseError from '@ianwalter/base-error'
 
+function findItemByKey (items, key) {
+  for (let item of items) {
+    if (item.key === key) {
+      return item
+    }
+  }
+}
+
 export default class {
   constructor (tree = {}, path = [tree], state = {}) {
     this.path = path
@@ -27,7 +35,7 @@ export default class {
     const currentNode = this.current()
     const selectedOptionKey = this.state[currentNode.key]
     const selectedOption = currentNode.options
-      ? currentNode.options.find(o => o.key === selectedOptionKey)
+      ? findItemByKey(currentNode.options, selectedOptionKey)
       : null
     if (currentNode.children.length < 1) {
       throw new BaseError(this.noChildren, currentNode)
@@ -37,7 +45,7 @@ export default class {
       const key = typeof selectedOption.leadsTo === 'function'
         ? selectedOption.leadsTo(this)
         : selectedOption.leadsTo
-      const node = currentNode.children.find(node => node.key === key)
+      const node = findItemByKey(currentNode.children, key)
       if (node) {
         return this.path.push(node) && node
       }
