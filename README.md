@@ -10,7 +10,7 @@ Create your own Buzzfeed quizzes!
 ## Installation
 
 ```console
-npm install @ianwalter/decision-tree
+yarn add @ianwalter/decision-tree
 ```
 
 ## Usage
