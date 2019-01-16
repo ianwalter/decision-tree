@@ -48,6 +48,21 @@ const proficiency = {
     }
   ]
 }
+const mage = {
+  key: 'mage',
+  title: 'Mage',
+  description: `
+    You are a powerful mage, hurling fireballs at your foes!
+  `
+}
+const sorcerer = {
+  key: 'sorcerer',
+  title: 'Sorcerer',
+  description: `
+    You are an amazing sorcerer, dealing with magic through your natural
+    abilities rather than learning casting rituals.
+  `
+}
 const attribute = {
   key: 'attribute',
   title: 'What is your greatest attribute?',
@@ -89,14 +104,15 @@ const attribute = {
           leadsTo: 'cleric'
         }
       ],
+      leadsTo: dt => {
+        const damage = dt.state.spells.includes('damage')
+        const healing = dt.state.spells.includes('healing')
+        if (damage && healing) {
+          return 'sorcerer'
+        }
+      },
       children: [
-        {
-          key: 'mage',
-          title: 'Mage',
-          description: `
-            You are a powerful mage, hurling fireballs at your foes!
-          `
-        },
+        mage,
         {
           key: 'cleric',
           title: 'Cleric',
@@ -104,7 +120,8 @@ const attribute = {
             You are a knowledgeable cleric, saving your friends by casting
             spells to heal them.
           `
-        }
+        },
+        sorcerer
       ]
     },
     proficiency,
@@ -120,7 +137,7 @@ const attribute = {
 const tree = { key: 'start', children: [attribute] }
 const fighterPath = ['start', 'attribute', 'proficiency', 'fighter']
 
-test('DecisionTree stores a response and traverses a static lead', t => {
+test('can store a response and traverse a static lead', t => {
   const decisionTree = new DecisionTree(tree)
   decisionTree.next()
   t.deepEqual(decisionTree.pathKeys(), ['start', 'attribute'])
@@ -131,7 +148,7 @@ test('DecisionTree stores a response and traverses a static lead', t => {
   t.deepEqual(decisionTree.pathKeys(), ['start', 'attribute', 'bard'])
 })
 
-test('DecisionTree stores state and traverses a functional lead', t => {
+test('can store state and traverse a functional lead', t => {
   const decisionTree = new DecisionTree(tree)
   decisionTree.next()
   decisionTree.set('attribute', 'S').next()
@@ -143,10 +160,30 @@ test('DecisionTree stores state and traverses a functional lead', t => {
   t.deepEqual(decisionTree.pathKeys(), thiefPath)
 })
 
-test('DecisionTree can be instantiated with path and state', t => {
+test('can be instantiated with path and state', t => {
   const path = [tree, attribute, proficiency]
   const state = { attribute: 'S', proficiency: 'swords' }
   const decisionTree = new DecisionTree(tree, path, state)
   decisionTree.next()
   t.deepEqual(decisionTree.pathKeys(), fighterPath)
+})
+
+test('can support multiple choice options where only one is selected', t => {
+  const decisionTree = new DecisionTree(tree)
+  decisionTree.next()
+  decisionTree.set('attribute', 'I')
+  decisionTree.next()
+  decisionTree.set('spells', ['damage'])
+  decisionTree.next()
+  t.is(decisionTree.current(), mage)
+})
+
+test('can support multiple choice options where multiple are selected', t => {
+  const decisionTree = new DecisionTree(tree)
+  decisionTree.next()
+  decisionTree.set('attribute', 'I')
+  decisionTree.next()
+  decisionTree.set('spells', ['damage', 'healing'])
+  decisionTree.next()
+  t.is(decisionTree.current(), sorcerer)
 })
