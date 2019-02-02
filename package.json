@@ -1,6 +1,6 @@
 {
   "name": "@ianwalter/decision-tree",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "A utility for traversing decision trees by selecting options",
   "main": "dist/decision-tree.js",
   "module": "dist/decision-tree.m.js",
