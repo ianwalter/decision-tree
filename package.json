@@ -3,8 +3,8 @@
   "version": "2.1.0",
   "description": "A utility for traversing decision trees by selecting options",
   "main": "dist/decision-tree.js",
-  "iife": "dist/decision-tree.iife.js",
   "module": "dist/decision-tree.m.js",
+  "iife": "dist/decision-tree.iife.js",
   "scripts": {
     "lint": "eslint index.js test.js",
     "pretest": "dist --babel",
@@ -35,13 +35,10 @@
     "> 0.25%"
   ],
   "dependencies": {
-    "@babel/runtime": "^7.2.0",
     "@ianwalter/base-error": "^4.0.0"
   },
   "devDependencies": {
-    "@babel/plugin-transform-runtime": "^7.2.0",
-    "@babel/preset-env": "^7.2.3",
-    "@ianwalter/dist": "^1.4.0",
+    "@ianwalter/dist": "^1.5.0-1",
     "ava": "^1.0.1",
     "eslint": "^5.7.0",
     "eslint-config-standard": "^12.0.0",
