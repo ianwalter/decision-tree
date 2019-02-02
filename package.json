@@ -7,7 +7,9 @@
   "iife": "dist/decision-tree.iife.js",
   "scripts": {
     "lint": "eslint index.js test.js",
-    "pretest": "dist --name DecisionTree --babel",
+    "dist": "dist --babel --no-iife",
+    "iife": "dist --name DecisionTree --babel --inline --no-cjs --no-esm",
+    "pretest": "npm run dist && npm run iife",
     "test": "ava"
   },
   "files": [
@@ -31,14 +33,14 @@
     "url": "https://github.com/ianwalter/decision-tree/issues"
   },
   "homepage": "https://github.com/ianwalter/decision-tree#readme",
-  "browserslist": [
-    "> 0.5%"
-  ],
   "dependencies": {
-    "@ianwalter/base-error": "^4.0.1"
+    "@babel/runtime": "^7.3.1",
+    "@ianwalter/base-error": "^4.0.2"
   },
   "devDependencies": {
-    "@ianwalter/dist": "^1.5.0-1",
+    "@babel/plugin-transform-runtime": "^7.2.0",
+    "@babel/preset-env": "^7.3.1",
+    "@ianwalter/dist": "^1.5.1",
     "ava": "^1.0.1",
     "eslint": "^5.7.0",
     "eslint-config-standard": "^12.0.0",
@@ -47,6 +49,17 @@
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-standard": "^4.0.0",
     "np": "^4.0.2"
+  },
+  "browserslist": [
+    "> 0.5%"
+  ],
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ],
+    "plugins": [
+      "@babel/plugin-transform-runtime"
+    ]
   },
   "eslintConfig": {
     "root": true,
