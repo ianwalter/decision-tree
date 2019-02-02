@@ -379,10 +379,10 @@
   dependencies:
     arrify "^1.0.1"
 
-"@ianwalter/base-error@^4.0.0":
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/@ianwalter/base-error/-/base-error-4.0.0.tgz#15459519ccd5294d7ce7a1499e0c460fa21351b6"
-  integrity sha512-q/F/MyzZ5dBStQLOVYoN4Lorbr5zhedGjVxUriCSk18N+vK4v2x0rC5aZ3bevUL7X7Mu6WpTdDFxV/3wxODpNQ==
+"@ianwalter/base-error@^4.0.1":
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/@ianwalter/base-error/-/base-error-4.0.1.tgz#9bd7e5e978973b033de200346c8803bb67a27135"
+  integrity sha512-TL3oT8c8dAa80oLCeKEt46upe8Pp6YsVJg+IuQqVLRng6cseTLwg8IHmXNGiv8XBQdoJVw3DLFD9/LiLLXfuAQ==
   dependencies:
     "@babel/runtime" "^7.2.0"
 

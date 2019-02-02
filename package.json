@@ -7,7 +7,7 @@
   "iife": "dist/decision-tree.iife.js",
   "scripts": {
     "lint": "eslint index.js test.js",
-    "pretest": "dist --babel",
+    "pretest": "dist --name DecisionTree --babel",
     "test": "ava"
   },
   "files": [
@@ -32,10 +32,10 @@
   },
   "homepage": "https://github.com/ianwalter/decision-tree#readme",
   "browserslist": [
-    "> 0.25%"
+    "> 0.5%"
   ],
   "dependencies": {
-    "@ianwalter/base-error": "^4.0.0"
+    "@ianwalter/base-error": "^4.0.1"
   },
   "devDependencies": {
     "@ianwalter/dist": "^1.5.0-1",
