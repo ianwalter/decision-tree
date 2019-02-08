@@ -705,10 +705,10 @@
   dependencies:
     "@babel/runtime" "^7.2.0"
 
-"@ianwalter/dist@^1.5.1":
-  version "1.5.1"
-  resolved "https://registry.yarnpkg.com/@ianwalter/dist/-/dist-1.5.1.tgz#be3d40a1c307bd86c61f945b62010b47a89b3900"
-  integrity sha512-YE5L1GvGWa+DwvfUzLjz8J1zlgv3zHAyaBsp4IDu15EhgKg1zXA751qAbTD56ASZGQzVRhN+K2cXL+JTUSATGw==
+"@ianwalter/dist@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@ianwalter/dist/-/dist-2.0.0.tgz#21b663fbbd83b08aea9af6261f5a6dcd644de3ff"
+  integrity sha512-7BHuBfbTuLlfZDkTMvPzj1hOQem0c0Kij9vscVHPo09gpOx7w8eY/fgtWi0bfQdSBtR3BoS41QVtPFGMg0e3sA==
   dependencies:
     "@ianwalter/npm-short-name" "^1.0.0"
     "@ianwalter/promise-complete" "^3.0.1"
