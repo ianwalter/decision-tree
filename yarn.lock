@@ -706,10 +706,11 @@
     "@babel/runtime" "^7.2.0"
 
 "@ianwalter/dist@^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@ianwalter/dist/-/dist-2.0.0.tgz#21b663fbbd83b08aea9af6261f5a6dcd644de3ff"
-  integrity sha512-7BHuBfbTuLlfZDkTMvPzj1hOQem0c0Kij9vscVHPo09gpOx7w8eY/fgtWi0bfQdSBtR3BoS41QVtPFGMg0e3sA==
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/@ianwalter/dist/-/dist-2.0.2.tgz#fda0c0c11d9c711eba622f3c5f7d7950adf6998d"
+  integrity sha512-KInWEPKm097FGdlAYZDBKPzJqF7smF95cVz1145ObnU4pxHKJP3tN1DPkqANZMMiRrpK3j0h7DaAB2t9N4snhA==
   dependencies:
+    "@babel/core" "^7.2.2"
     "@ianwalter/npm-short-name" "^1.0.0"
     "@ianwalter/promise-complete" "^3.0.1"
     chalk "^2.4.2"
