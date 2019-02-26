@@ -751,10 +751,10 @@
     "@babel/plugin-transform-runtime" "^7.2.0"
     "@babel/preset-env" "^7.3.1"
 
-"@ianwalter/base-error@^4.0.2":
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/@ianwalter/base-error/-/base-error-4.0.2.tgz#bbede373918a6f11e13ea76998dbc8ab467f07e3"
-  integrity sha512-6hij5olyRraCnGdKxmXPGrPQbPnDwv6EAxQD9JvUkSuF/yj+2Wxlqe+DJfjkoLGKo9vlaFlTJTlJF/oyNVEM2A==
+"@ianwalter/base-error@^4.0.3":
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/@ianwalter/base-error/-/base-error-4.0.3.tgz#182ea754f2f3f4edf48ffdf78270e1741e9a0d98"
+  integrity sha512-sHTY8r0pvaih51vr8wJi6zZZAYiMPZdguhw6nYLtmjMtJ5xdUNQv2HFFDh56kj+RudncbW7JLWcDeVB8pX9yDQ==
   dependencies:
     "@babel/runtime" "^7.2.0"
 
