@@ -35,8 +35,6 @@
     "@ianwalter/base-error": "^4.0.2"
   },
   "devDependencies": {
-    "@babel/plugin-transform-runtime": "^7.2.0",
-    "@babel/preset-env": "^7.3.1",
     "@ianwalter/babel-preset-lib": "^1.0.4",
     "@ianwalter/dist": "^3.0.0",
     "ava": "^1.0.1",
@@ -53,10 +51,7 @@
   ],
   "babel": {
     "presets": [
-      "@babel/preset-env"
-    ],
-    "plugins": [
-      "@babel/plugin-transform-runtime"
+      "@ianwalter/lib"
     ]
   },
   "eslintConfig": {
