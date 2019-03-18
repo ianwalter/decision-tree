@@ -37,13 +37,8 @@
   "devDependencies": {
     "@ianwalter/babel-preset-lib": "^1.0.4",
     "@ianwalter/dist": "^3.0.0",
+    "@ianwalter/eslint-config": "^1.1.0",
     "ava": "^1.0.1",
-    "eslint": "^5.7.0",
-    "eslint-config-standard": "^12.0.0",
-    "eslint-plugin-import": "^2.12.0",
-    "eslint-plugin-node": "^8.0.0",
-    "eslint-plugin-promise": "^4.0.1",
-    "eslint-plugin-standard": "^4.0.0",
     "np": "^4.0.2"
   },
   "browserslist": [
@@ -57,8 +52,7 @@
   "eslintConfig": {
     "root": true,
     "extends": [
-      "eslint:recommended",
-      "standard"
+      "@ianwalter/eslint-config"
     ]
   }
 }
