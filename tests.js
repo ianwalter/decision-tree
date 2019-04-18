@@ -1,5 +1,5 @@
-import test from 'ava'
-import DecisionTree from '.'
+const { test } = require('@ianwalter/bff')
+const DecisionTree = require('.')
 
 const proficiency = {
   key: 'proficiency',
@@ -137,53 +137,53 @@ const attribute = {
 const tree = { key: 'start', children: [attribute] }
 const fighterPath = ['start', 'attribute', 'proficiency', 'fighter']
 
-test('can store a response and traverse a static lead', t => {
+test('can store a response and traverse a static lead', ctx => {
   const decisionTree = new DecisionTree(tree)
   decisionTree.next()
-  t.deepEqual(decisionTree.pathKeys(), ['start', 'attribute'])
+  ctx.expect(decisionTree.pathKeys()).toEqual(['start', 'attribute'])
   const bard = tree.children[0].options[3].key
   decisionTree.set(tree.children[0].key, bard)
-  t.is(decisionTree.state[tree.children[0].key], bard)
+  ctx.expect(decisionTree.state[tree.children[0].key]).toBe(bard)
   decisionTree.next()
-  t.deepEqual(decisionTree.pathKeys(), ['start', 'attribute', 'bard'])
+  ctx.expect(decisionTree.pathKeys()).toEqual(['start', 'attribute', 'bard'])
 })
 
-test('can store state and traverse a functional lead', t => {
+test('can store state and traverse a functional lead', ctx => {
   const decisionTree = new DecisionTree(tree)
   decisionTree.next()
   decisionTree.set('attribute', 'S').next()
   decisionTree.set('proficiency', 'swords').next()
-  t.deepEqual(decisionTree.pathKeys(), fighterPath)
+  ctx.expect(decisionTree.pathKeys()).toEqual(fighterPath)
   decisionTree.prev()
   decisionTree.set('attribute', 'D').next()
   const thiefPath = ['start', 'attribute', 'proficiency', 'thief']
-  t.deepEqual(decisionTree.pathKeys(), thiefPath)
+  ctx.expect(decisionTree.pathKeys()).toEqual(thiefPath)
 })
 
-test('can be instantiated with path and state', t => {
+test('can be instantiated with path and state', ctx => {
   const path = [tree, attribute, proficiency]
   const state = { attribute: 'S', proficiency: 'swords' }
   const decisionTree = new DecisionTree(tree, path, state)
   decisionTree.next()
-  t.deepEqual(decisionTree.pathKeys(), fighterPath)
+  ctx.expect(decisionTree.pathKeys()).toEqual(fighterPath)
 })
 
-test('can support multiple choice options where only one is selected', t => {
+test('can support multiple choice options where only one is selected', ctx => {
   const decisionTree = new DecisionTree(tree)
   decisionTree.next()
   decisionTree.set('attribute', 'I')
   decisionTree.next()
   decisionTree.set('spells', ['damage'])
   decisionTree.next()
-  t.is(decisionTree.current(), mage)
+  ctx.expect(decisionTree.current()).toBe(mage)
 })
 
-test('can support multiple choice options where multiple are selected', t => {
+test('can support multiple choice options where multiple are selected', ctx => {
   const decisionTree = new DecisionTree(tree)
   decisionTree.next()
   decisionTree.set('attribute', 'I')
   decisionTree.next()
   decisionTree.set('spells', ['damage', 'healing'])
   decisionTree.next()
-  t.is(decisionTree.current(), sorcerer)
+  ctx.expect(decisionTree.current()).toBe(sorcerer)
 })

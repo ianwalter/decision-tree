@@ -5,9 +5,9 @@
   "main": "dist/decision-tree.js",
   "module": "dist/decision-tree.m.js",
   "scripts": {
-    "lint": "eslint index.js test.js",
+    "lint": "eslint index.js tests.js",
     "pretest": "dist --babel",
-    "test": "ava"
+    "test": "bff"
   },
   "files": [
     "dist"
@@ -36,9 +36,9 @@
   },
   "devDependencies": {
     "@ianwalter/babel-preset-lib": "^1.0.4",
-    "@ianwalter/dist": "^3.0.0",
+    "@ianwalter/bff": "^2.10.0",
+    "@ianwalter/dist": "^3.1.0",
     "@ianwalter/eslint-config": "^1.1.0",
-    "ava": "^1.0.1",
     "np": "^4.0.2"
   },
   "browserslist": [
@@ -52,7 +52,7 @@
   "eslintConfig": {
     "root": true,
     "extends": [
-      "@ianwalter/eslint-config"
+      "@ianwalter"
     ]
   }
 }
