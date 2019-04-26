@@ -709,9 +709,9 @@
     "@babel/runtime" "^7.2.0"
 
 "@ianwalter/bff@^4.0.0":
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/@ianwalter/bff/-/bff-4.0.0.tgz#e46b3f01333865589bf2fb1cab0a752f73a5108f"
-  integrity sha512-BohAZde38NMJUtJCB0c/q4P9OPmOTV7t7LQZL9dzffl/yk4EcoTDRK++MkAUPjqDgDcQWEvMC6XL8SHG3MZWkA==
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/@ianwalter/bff/-/bff-4.0.1.tgz#e0e5011ad3420752d425b72165e07c42762aad21"
+  integrity sha512-+ItJXAea9eBNSLXCzWaEKh82R0pDWwKrSWEFrAyRKUc00fKdTC7XBXY0qJYUiGZxwtyW5rl0RkPOH3XoBV8HCA==
   dependencies:
     "@ianwalter/cli" "^1.1.1"
     "@ianwalter/print" "^2.3.0"
