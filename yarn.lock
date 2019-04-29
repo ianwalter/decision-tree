@@ -763,7 +763,7 @@
     rollup-plugin-json "^4.0.0"
     rollup-plugin-node-resolve "^4.0.1"
 
-"@ianwalter/eslint-config@^1.1.0":
+"@ianwalter/eslint-config@^1.1.2":
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/@ianwalter/eslint-config/-/eslint-config-1.1.2.tgz#a88bbc4b09d715c53d59571690c1a3b56d56ebdb"
   integrity sha512-FNv2vkOWlXsjRP/5FwRXk04i4aI3ZzfrF4H5pU+rOju7Idfqaq9lYvjk6ZAdnApoU6nUtGM3IjZboAQaOshKpg==
