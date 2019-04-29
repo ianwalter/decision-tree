@@ -31,8 +31,8 @@
   },
   "homepage": "https://github.com/ianwalter/decision-tree#readme",
   "dependencies": {
-    "@babel/runtime": "^7.3.4",
-    "@ianwalter/base-error": "^4.0.3"
+    "@babel/runtime-corejs3": "^7.4.4",
+    "@ianwalter/base-error": "^5.0.0"
   },
   "devDependencies": {
     "@ianwalter/babel-preset-lib": "^1.0.4",
