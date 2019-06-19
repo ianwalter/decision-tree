@@ -904,10 +904,10 @@
   dependencies:
     "@babel/runtime-corejs3" "^7.4.4"
 
-"@ianwalter/bff@^6.0.1":
-  version "6.0.1"
-  resolved "https://registry.yarnpkg.com/@ianwalter/bff/-/bff-6.0.1.tgz#e175adb7efc78b4aeb5444779b586fe38e391992"
-  integrity sha512-FwTZZweGOTa0loNv/th/Jz2UoUuoT71XeWYTbiP1nJjkX1imOdGhiAERjvGLkg7qTE24AcKrmRUZJmLrQMEKnQ==
+"@ianwalter/bff@^6.1.0":
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/@ianwalter/bff/-/bff-6.1.0.tgz#b0fc203cd4064ba5cf8892e01d481cdd148a7504"
+  integrity sha512-AbluZqrmR8c7AI1gnv91zH8gwS+scpdNwZsCNTpyn1zEcnyPb0DlMNgvUXur10nyVzDGLc79w+uLeTzy6wYJ0g==
   dependencies:
     "@ianwalter/cli" "^1.1.1"
     "@ianwalter/print" "^2.3.1"
