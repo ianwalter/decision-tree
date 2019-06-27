@@ -36,7 +36,7 @@
   },
   "devDependencies": {
     "@ianwalter/babel-preset-lib": "^2.0.2",
-    "@ianwalter/bff": "^6.2.0",
+    "@ianwalter/bff": "^6.3.1",
     "@ianwalter/dist": "^5.0.1",
     "@ianwalter/eslint-config": "^2.0.1",
     "@ianwalter/renovate-config": "^1.1.0",
