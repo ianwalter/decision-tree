@@ -1,7 +1,7 @@
 import BaseError from '@ianwalter/base-error'
 
 function findItemByKey (items = [], key) {
-  for (let item of items) {
+  for (const item of items) {
     if (item.key === key) {
       return item
     }
@@ -13,9 +13,9 @@ export default class {
     this.path = path
     this.state = state
 
-    this.noChildren = `No children found to move to`
-    this.noLead = `Can't determine which child to move to`
-    this.noParent = `No parent node found to move to`
+    this.noChildren = 'No children found to move to'
+    this.noLead = "Can't determine which child to move to"
+    this.noParent = 'No parent node found to move to'
   }
 
   set (key, value) {
