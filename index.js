@@ -93,7 +93,6 @@ class DecisionTree {
     return this.path.map(({ key }) => key)
   }
 }
- 
 
 export {
   NoChildrenError,
