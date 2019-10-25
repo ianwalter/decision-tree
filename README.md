@@ -152,8 +152,9 @@ decisionTree.current() /* => {
 
 ### Instance methods
 
-next
-prev
+next Continues to the next node
+prev Goes back to the previous node in the path
+pathKeys Returns an array with node keys in order of the path
 
 ### Errors
 
