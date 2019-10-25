@@ -1,4 +1,4 @@
-# decision-tree
+# @ianwalter/decision-tree
 > A utility for traversing decision trees by selecting options
 
 [![npm page][npmImage]][npmUrl]
