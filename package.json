@@ -31,7 +31,7 @@
   },
   "homepage": "https://github.com/ianwalter/decision-tree#readme",
   "dependencies": {
-    "@ianwalter/base-error": "^6.0.0"
+    "@ianwalter/base-error": "^6.1.0"
   },
   "devDependencies": {
     "@ianwalter/bff": "^7.0.0",
