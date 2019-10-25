@@ -2,10 +2,11 @@
 > A utility for traversing decision trees by selecting options
 
 [![npm page][npmImage]][npmUrl]
+[![CI][ciImage]][ciUrl]
 
-## About
+## Resources
 
-Create your own Buzzfeed quizzes!
+* [Spotlight on decision-tree blog post][postUrl]
 
 ## Installation
 
@@ -147,14 +148,15 @@ decisionTree.current() /* => {
 
 ## License
 
-Apache 2.0 with Commons Clause - See [LICENSE][licenseUrl]
+Hippocratic License - See [LICENSE][licenseUrl]
 
 &nbsp;
 
-Created by [Ian Walter](https://iankwalter.com)
+Created by [Ian Walter](https://ianwalter.dev)
 
 [npmImage]: https://img.shields.io/npm/v/@ianwalter/decision-tree.svg
 [npmUrl]: https://www.npmjs.com/package/@ianwalter/decision-tree
+[ciImage]: https://github.com/ianwalter/decision-tree/workflows/CI/badge.svg
+[ciUrl]: https://github.com/ianwalter/decision-tree/actions
+[postUrl]: https://ianwalter.dev/spotlight-on-decision-tree
 [licenseUrl]: https://github.com/ianwalter/decision-tree/blob/master/LICENSE
-
-
