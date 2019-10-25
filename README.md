@@ -17,6 +17,8 @@ yarn add @ianwalter/decision-tree
 ## Usage
 
 ```js
+import { DecisionTree } from '@ianwalter/decision-tree'
+
 const decisionTree = new DecisionTree({
   key: 'attribute',
   title: 'What is your greatest attribute?',
@@ -148,8 +150,16 @@ decisionTree.current() /* => {
 
 ## API
 
+### Instance methods
+
 next
 prev
+
+### Errors
+
+NoChildrenError
+NoLeadToError
+NoParenError
 
 ## License
 
