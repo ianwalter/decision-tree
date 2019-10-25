@@ -172,10 +172,10 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@ianwalter/base-error@^6.0.0":
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/@ianwalter/base-error/-/base-error-6.0.0.tgz#d53b93115739e4fec4406b06173be35321d207f8"
-  integrity sha512-I7iqckGb4RCE4pZKTo4o3J17ajhp1+XJfYMTQhY4L+tyWYNdj5sqacrnyzgfrYpkzuUrdWGIgpcsF72WA2yPkg==
+"@ianwalter/base-error@^6.1.0":
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/@ianwalter/base-error/-/base-error-6.1.0.tgz#a25f8a57e04877f6823251c5f1e05c7c060a0130"
+  integrity sha512-a1oe3gdY7aVJotysd2hbkARZdIXd80b1xL+kcJGQ/5VzEv7bMhQ+vlamv8DLz828uz/dxMCVb4++n75RyVUs2Q==
 
 "@ianwalter/bff@^7.0.0":
   version "7.0.0"
