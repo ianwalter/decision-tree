@@ -146,6 +146,11 @@ decisionTree.current() /* => {
 */
 ```
 
+## API
+
+next
+prev
+
 ## License
 
 Hippocratic License - See [LICENSE][licenseUrl]
