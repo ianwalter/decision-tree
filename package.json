@@ -2,6 +2,11 @@
   "name": "@ianwalter/decision-tree",
   "version": "4.0.1",
   "description": "A utility for traversing decision trees by selecting options",
+  "license": "SEE LICENSE IN LICENSE",
+  "author": {
+    "name": "Ian Walter",
+    "url": "https://ianwalter.dev"
+  },
   "main": "dist/decision-tree.js",
   "module": "dist/decision-tree.m.js",
   "scripts": {
@@ -24,8 +29,6 @@
     "quiz",
     "survey"
   ],
-  "author": "Ian Walter <public@iankwalter.com> (https://iankwalter.com)",
-  "license": "SEE LICENSE IN LICENSE",
   "bugs": {
     "url": "https://github.com/ianwalter/decision-tree/issues"
   },

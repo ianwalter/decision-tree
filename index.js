@@ -1,21 +1,29 @@
 import BaseError from '@ianwalter/base-error'
 
-function findItemByKey (items = [], key) {
-  for (const item of items) {
-    if (item.key === key) {
-      return item
-    }
+const findItemByKey = (items = [], key) => items.find(item => item.key === key)
+
+class NoChildrenError extends BaseError {
+  constructor (node) {
+    super('No children found to move to', { node })
   }
 }
 
-export default class {
+class NoLeadToError extends BaseError {
+  constructor (key, option) {
+    super('Cannot determine which child to move to', { key, option })
+  }
+}
+
+class NoParentError extends BaseError {
+  constructor () {
+    super('No parent node found to move to')
+  }
+}
+
+class DecisionTree {
   constructor (tree = {}, path = [tree], state = {}) {
     this.path = path
     this.state = state
-
-    this.noChildren = 'No children found to move to'
-    this.noLead = "Can't determine which child to move to"
-    this.noParent = 'No parent node found to move to'
   }
 
   set (key, value) {
@@ -56,7 +64,7 @@ export default class {
     // Move to the next node.
     if (currentNode.children.length < 1) {
       // No children to move to!
-      throw new BaseError(this.noChildren, currentNode)
+      throw new NoChildrenError(currentNode)
     } else if (currentNode.children.length === 1) {
       // Move to the only child.
       return this.goToNode(currentNode.children[0])
@@ -70,7 +78,7 @@ export default class {
     }
 
     // Throw an error if the next node to move to can't be determined.
-    throw new BaseError(this.noLead, selectedOptionKey, selectedOption)
+    throw new NoLeadToError(selectedOptionKey, selectedOption)
   }
 
   prev () {
@@ -78,10 +86,18 @@ export default class {
     if (parentNode) {
       return this.path.pop()
     }
-    throw new BaseError(this.noParent)
+    throw new NoParentError()
   }
 
   pathKeys () {
     return this.path.map(({ key }) => key)
   }
+}
+ 
+
+export {
+  NoChildrenError,
+  NoLeadToError,
+  NoParentError,
+  DecisionTree
 }

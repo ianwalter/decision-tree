@@ -1,5 +1,5 @@
 const { test } = require('@ianwalter/bff')
-const DecisionTree = require('.')
+const { DecisionTree, NoLeadToError } = require('.')
 
 const proficiency = {
   key: 'proficiency',
@@ -186,4 +186,14 @@ test('can support multiple choice options where multiple are selected', ctx => {
   decisionTree.set('spells', ['damage', 'healing'])
   decisionTree.next()
   ctx.expect(decisionTree.current()).toBe(sorcerer)
+})
+
+test('NoLeadToError', ctx => {
+  const decisionTree = new DecisionTree(tree)
+  try {
+    decisionTree.next()
+    decisionTree.next()
+  } catch (err) {
+    ctx.expect(err instanceof NoLeadToError).toBe(true)
+  }
 })
