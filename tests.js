@@ -1,5 +1,5 @@
 const { test } = require('@ianwalter/bff')
-const { DecisionTree, NoLeadToError } = require('.')
+const { DecisionTree, NoLeadsToError } = require('.')
 
 const proficiency = {
   key: 'proficiency',
@@ -194,6 +194,6 @@ test('NoLeadToError', ctx => {
     decisionTree.next()
     decisionTree.next()
   } catch (err) {
-    ctx.expect(err instanceof NoLeadToError).toBe(true)
+    ctx.expect(err instanceof NoLeadsToError).toBe(true)
   }
 })
