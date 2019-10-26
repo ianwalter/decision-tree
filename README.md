@@ -152,15 +152,42 @@ decisionTree.current() /* => {
 
 ### Instance methods
 
-next Continues to the next node
-prev Goes back to the previous node in the path
-pathKeys Returns an array with node keys in order of the path
+```js
+// Set a value (selected option / answer) for a question.
+decisionTree.set(key, value)
+
+// Return the current node (the last node in the path).
+decisionTree.current()
+
+// Append the given node to the path, making it the current node.
+decisionTree.goToNode(node)
+
+// Determine the next node to move to by handling the selected option's leadsTo
+// property/method.
+decisionTree.getNodeFromLeadsTo(currentNode, selectedOption)
+
+// Continue to the next node.
+decisionTree.next()
+
+// Go back to the previous node in the path.
+decisionTree.prev()
+
+// Return the branch/path as an array of ordered node keys.
+decisionTree.pathKeys()
+```
 
 ### Errors
 
-NoChildrenError
-NoLeadToError
-NoParenError
+```js
+import { 
+  // There are no children to navigate to when calling next.
+  NoChildrenError,
+  // The next node to navigate to can't be determined when calling next.
+  NoLeadsToError,
+  // There is no parent to navigate to when calling prev.
+  NoParentError 
+} from '@ianwalter/decision-tree'
+```
 
 ## License
 

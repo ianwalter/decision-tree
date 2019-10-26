@@ -8,7 +8,7 @@ class NoChildrenError extends BaseError {
   }
 }
 
-class NoLeadToError extends BaseError {
+class NoLeadsToError extends BaseError {
   constructor (key, option) {
     super('Cannot determine which child to move to', { key, option })
   }
@@ -78,7 +78,7 @@ class DecisionTree {
     }
 
     // Throw an error if the next node to move to can't be determined.
-    throw new NoLeadToError(selectedOptionKey, selectedOption)
+    throw new NoLeadsToError(selectedOptionKey, selectedOption)
   }
 
   prev () {
@@ -96,7 +96,7 @@ class DecisionTree {
 
 export {
   NoChildrenError,
-  NoLeadToError,
+  NoLeadsToError,
   NoParentError,
   DecisionTree
 }
