@@ -179,13 +179,13 @@ decisionTree.pathKeys()
 ### Errors
 
 ```js
-import { 
+import {
   // There are no children to navigate to when calling next.
   NoChildrenError,
   // The next node to navigate to can't be determined when calling next.
   NoLeadsToError,
   // There is no parent to navigate to when calling prev.
-  NoParentError 
+  NoParentError
 } from '@ianwalter/decision-tree'
 ```
 
