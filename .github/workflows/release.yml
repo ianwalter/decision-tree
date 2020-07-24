@@ -17,7 +17,9 @@ jobs:
           # generate changelogs with the correct commits.
           fetch-depth: 0
       - name: Install
-        run: pnpm i --dev
+        run: pnpm i
+      - name: Build
+        run: pnpm pretest
       - name: Changesets
         uses: changesets/action@bfeb9e077e6cf393e4c4ef17e2bbc75b308b4364
         with:
