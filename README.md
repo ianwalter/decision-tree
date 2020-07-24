@@ -11,7 +11,7 @@
 ## Installation
 
 ```console
-yarn add @ianwalter/decision-tree
+pnpm add @ianwalter/decision-tree
 ```
 
 ## Usage

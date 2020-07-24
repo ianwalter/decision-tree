@@ -1,0 +1,17 @@
+name: Changeset
+on:
+  pull_request:
+    types: [labeled]
+jobs:
+  changeset:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Changeset
+        uses: ianwalter/add-changeset@v1.0.8
+        env:
+          DEBUG: true

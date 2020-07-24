@@ -45,7 +45,7 @@ class DecisionTree {
 
   getNodeFromLeadsTo (currentNode, { leadsTo }) {
     const key = typeof leadsTo === 'function' ? leadsTo(this) : leadsTo
-    return findItemByKey(currentNode.children, key)
+    return findItemByKey(currentNode && currentNode.children, key)
   }
 
   next () {
