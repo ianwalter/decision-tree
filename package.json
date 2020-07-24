@@ -33,6 +33,9 @@
     "url": "https://github.com/ianwalter/decision-tree/issues"
   },
   "homepage": "https://github.com/ianwalter/decision-tree#readme",
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "@ianwalter/base-error": "^6.1.0"
   },
