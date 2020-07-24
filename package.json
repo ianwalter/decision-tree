@@ -1,6 +1,6 @@
 {
   "name": "@ianwalter/decision-tree",
-  "version": "5.0.1",
+  "version": "5.0.2",
   "description": "A utility for traversing decision trees by selecting options",
   "license": "SEE LICENSE IN LICENSE",
   "author": {
