@@ -208,4 +208,4 @@ Created by [Ian Walter](https://ianwalter.dev)
 [ciImage]: https://github.com/ianwalter/decision-tree/workflows/CI/badge.svg
 [ciUrl]: https://github.com/ianwalter/decision-tree/actions
 [postUrl]: https://ianwalter.dev/spotlight-on-decision-tree
-[licenseUrl]: https://github.com/ianwalter/decision-tree/blob/master/LICENSE
+[licenseUrl]: https://github.com/ianwalter/decision-tree/blob/main/LICENSE
