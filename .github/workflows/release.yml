@@ -7,7 +7,7 @@ jobs:
   release:
     runs-on: ubuntu-latest
     container:
-      image: ianwalter/pnpm:v1.1.0
+      image: ianwalter/pnpm:v1.4.0
     timeout-minutes: 10
     steps:
       - name: Checkout

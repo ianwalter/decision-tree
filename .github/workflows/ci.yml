@@ -2,13 +2,13 @@ name: CI
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
 jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image: ianwalter/pnpm:v1.1.0
+      image: ianwalter/pnpm:v1.4.0
     timeout-minutes: 3
     steps:
       - name: Checkout
