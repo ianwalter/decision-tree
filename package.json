@@ -11,10 +11,12 @@
   "module": "dist/decision-tree.m.js",
   "scripts": {
     "lint": "eslint .",
-    "pretest": "dist",
+    "pretest": "modulize",
     "test": "bff"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ianwalter/decision-tree.git"
@@ -39,8 +41,8 @@
   },
   "devDependencies": {
     "@changesets/cli": "^2.12.0",
+    "@generates/modulizer": "^6.0.0",
     "@ianwalter/bff": "^9.13.0",
-    "@ianwalter/dist": "^6.0.0",
     "@ianwalter/eslint-config": "^6.2.0",
     "@ianwalter/renovate-config": "^1.4.2"
   },
