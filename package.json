@@ -44,7 +44,7 @@
     "@generates/modulizer": "^6.0.1",
     "@ianwalter/bff": "^9.13.0",
     "@ianwalter/eslint-config": "^6.2.0",
-    "@ianwalter/renovate-config": "^1.4.2"
+    "@ianwalter/renovate-config": "^1.4.3"
   },
   "browserslist": "> 2%, not dead",
   "eslintConfig": {
