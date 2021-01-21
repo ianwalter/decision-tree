@@ -1,7 +1,7 @@
 dependencies:
   '@ianwalter/base-error': 6.1.0
 devDependencies:
-  '@changesets/cli': 2.13.0
+  '@changesets/cli': 2.13.1
   '@generates/modulizer': 6.0.1
   '@ianwalter/bff': 9.13.0
   '@ianwalter/eslint-config': 6.2.0
@@ -361,7 +361,7 @@ packages:
     dev: true
     resolution:
       integrity: sha512-3Kv21FNvysTQvZs3fHr6aZeDibhZHtgI1++fMZplzVtwNVmpjow3zv9lcZmJP26LthbpVH3I8+nqlU7M43lfWA==
-  /@changesets/cli/2.13.0:
+  /@changesets/cli/2.13.1:
     dependencies:
       '@babel/runtime': 7.10.5
       '@changesets/apply-release-plan': 4.0.0
@@ -396,7 +396,7 @@ packages:
     dev: true
     hasBin: true
     resolution:
-      integrity: sha512-z5b2CkubunWkT5jtGLIioz6swhsSd9ks7cxQNrf721JE3cr2si+Qy/3Zrw9jfbQTHheionD3LAEsc6wauZg3WQ==
+      integrity: sha512-pG8/X57tD60WGVN9zFN190GktXXF3O4e1ApWPAtDNLh7A3ccgl8QaOg2npOARmkr4lBOPJHLjUILd8Z+u4B7+Q==
   /@changesets/config/1.4.0:
     dependencies:
       '@changesets/errors': 0.1.4
@@ -5101,7 +5101,7 @@ packages:
     resolution:
       integrity: sha512-aePbxDmcYW++PaqBsJ+HYUFwCdv4LVvdnhBy78E57PIor8/OVvhMrADFFEDh8DHDFRv/O9i3lPhsENjO7QX0+A==
 specifiers:
-  '@changesets/cli': ^2.13.0
+  '@changesets/cli': ^2.13.1
   '@generates/modulizer': ^6.0.1
   '@ianwalter/base-error': ^6.1.0
   '@ianwalter/bff': ^9.13.0
