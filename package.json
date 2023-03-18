@@ -43,7 +43,7 @@
     "@changesets/cli": "^2.14.1",
     "@generates/modulizer": "^7.0.1",
     "@ianwalter/bff": "^9.13.0",
-    "@ianwalter/eslint-config": "^6.2.0",
+    "@ianwalter/eslint-config": "^7.2.0",
     "@ianwalter/renovate-config": "^1.4.4"
   },
   "browserslist": "> 2%, not dead",
